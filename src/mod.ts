@@ -37,6 +37,16 @@ class Mod implements IPreAkiLoadMod, IPostDBLoadMod
                 t7._props.RampShift = 0.05; // Spectrum Adjustment Shift Values
                 t7._props.IsFpsStuck = this.modConfig.T7.FPSLimit; // If googles have a fixed refresh rate
             }
+
+            if (this.modConfig.PVS14.Enabled)
+            {
+                const pvs14 = items["57235b6f24597759bf5a30f1"]; // The AN/PVS-14 Night Vision Monocular
+                pvs14._props.Mask = "Anvis"; // To remove cone-vision-mask ( entire screen is visible thermal )
+                pvs14._props.MaskSize = 1.5; // Mask Size
+                pvs14._props.IsNoisy = this.modConfig.PVS14.Noise; // If goggles should have noise
+                pvs14._props.NoiseIntensity = this.modConfig.PVS14.Noise? 0.02 : 0; // If goggles should have noise only then enable it
+                pvs14._props.Color = this.modConfig.PVS14.Color; // Color Filter of PVS-14 Goggles
+            }
         }
     }
 }

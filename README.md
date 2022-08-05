@@ -1,4 +1,4 @@
-# Config - v1.0.0 for SPT 3.1.1
+# Config - v1.1.0 for SPT 3.1.1
 
 - Enabled -- Wether the enitre mod is enabled. Takes [true] or [false]
 - T7
@@ -8,6 +8,10 @@
 - - Noise -- Wether to apply noise. Takes [true] or [false]
 - - MotionBlur -- Wether to apply motion blur. Takes [true] or [false]
 - - FPSLimit -- Wether to cap FPS. Takes [true] or [false]
+- PVS-14
+- - Enabled -- Wether changes to the AN/PVS-14 Night Vision Monocular should be made. Takes [true] or [false]
+- - Noise -- Wether to apply noise. Takes [true] or [false]
+- - Color -- Color Filter: Takes r,g,b,a in 0<=n<=255. Default: 183, 255, 86, 254
 
 ## Notes
 

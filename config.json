@@ -7,5 +7,15 @@
         "Noise": false,
         "MotionBlur": false,
         "FPSLimit": false
+    },
+    "PVS14": {
+        "Enabled": true,
+        "Noise": false,
+        "Color": {
+            "r": 183,
+            "g": 255,
+            "b": 86,
+            "a": 254
+        }
     }
 }
