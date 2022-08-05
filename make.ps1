@@ -1,11 +1,11 @@
 npm run clean:environment | out-null
 npm run build:unzipped | out-null
-if (Test-Path -Path C:\Games\ETM\user\mods\Thermal++\) {
-    Remove-Item -Recurse -Force C:\Games\ETM\user\mods\Thermal++\ | out-null
+if (Test-Path -Path C:\Games\ETM\user\mods\Goggles\) {
+    Remove-Item -Recurse -Force C:\Games\ETM\user\mods\Goggles\ | out-null
 }
-mkdir C:\Games\ETM\user\mods\Thermal++\ | out-null
-Copy-Item -Recurse -Path .\dist\* -Destination C:\Games\ETM\user\mods\Thermal++\ | out-null
-Remove-Item C:\Games\ETM\user\mods\Thermal++\make.ps1 | out-null
+mkdir C:\Games\ETM\user\mods\Goggles\ | out-null
+Copy-Item -Recurse -Path .\dist\* -Destination C:\Games\ETM\user\mods\Goggles\ | out-null
+Remove-Item C:\Games\ETM\user\mods\Goggles\make.ps1 | out-null
 Set-Location C:\Games\ETM\ | out-null
 Start-Process powershell {./Aki.Server.exe}
 Start-Process powershell {./Aki.Launcher.exe}
