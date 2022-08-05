@@ -1,0 +1,11 @@
+{
+    "Enabled": true,
+    "T7": {
+        "Enabled": true,
+        "Mode": "heat",
+        "Spectrum": true,
+        "Noise": false,
+        "MotionBlur": false,
+        "FPSLimit": false
+    }
+}
