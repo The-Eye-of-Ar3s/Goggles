@@ -1,4 +1,4 @@
-# Config - v1.1.0 for SPT 3.1.1
+# Config - v1.2.0 for SPT 3.1.1
 
 - Enabled -- Wether the enitre mod is enabled. Takes [true] or [false]
 - T7
@@ -12,13 +12,17 @@
 - - Enabled -- Wether changes to the AN/PVS-14 Night Vision Monocular should be made. Takes [true] or [false]
 - - Noise -- Wether to apply noise. Takes [true] or [false]
 - - Color -- Color Filter: Takes r,g,b,a in 0<=n<=255. Default: 183, 255, 86, 254
+- PNV-10T
+- - Enabled -- Wether changes to the AN/PVS-14 Night Vision Monocular should be made. Takes [true] or [false]
+- - Noise -- Wether to apply noise. Takes [true] or [false]
+- - Color -- Color Filter: Takes r,g,b,a in 0<=n<=255. Default: 0, 255, 32, 254
 
 ## Notes
 
 Hue mode looks horrible. This is for 2 Reasons:
 
 1. Most People are used to a different heat display ( which gets used because its better )
-2. I have not adjusted spectrum values for hue mode sperately.
+2. I have not adjusted spectrum values for hue mode seperately.
 
 
 ## Credit

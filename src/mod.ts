@@ -47,6 +47,16 @@ class Mod implements IPreAkiLoadMod, IPostDBLoadMod
                 pvs14._props.NoiseIntensity = this.modConfig.PVS14.Noise? 0.02 : 0; // If goggles should have noise only then enable it
                 pvs14._props.Color = this.modConfig.PVS14.Color; // Color Filter of PVS-14 Goggles
             }
+
+            if (this.modConfig.PNV10T.Enabled)
+            {
+                const pnv10t = items["5c0696830db834001d23f5da"]; // The PNV-10T Night Vision Goggles
+                pnv10t._props.Mask = "Anvis"; // To remove cone-vision-mask ( entire screen is visible thermal )
+                pnv10t._props.MaskSize = 1.5; // Mask Size
+                pnv10t._props.IsNoisy = this.modConfig.PNV10T.Noise; // If goggles should have noise
+                pnv10t._props.NoiseIntensity = this.modConfig.PNV10T.Noise? 0.02 : 0; // If goggles should have noise only then enable it
+                pnv10t._props.Color = this.modConfig.PNV10T.Color; // Color Filter of PVS-14 Goggles
+            }
         }
     }
 }
