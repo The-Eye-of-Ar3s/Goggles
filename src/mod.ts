@@ -27,12 +27,12 @@ class Mod implements IPreAkiLoadMod, IPostDBLoadMod
         
                 // Property adjustment
                 t7._props.Mask = "Anvis"; // To remove cone-vision-mask ( entire screen is visible thermal )
-                t7._props.RampPalette = this.modConfig.T7.Mode == "heat" ? "0" : "1" ; // Which colormap to use (0: Heat, 1: Hue)
+                t7._props.RampPalette = {"heat": "0", "hue": "1", "default": "BlackHot", "whitehot": "WhiteHot"}[this.modConfig.T7.Mode]; // Which colormap to use (TODO: add seperate spectrums)
                 t7._props.IsNoisy = this.modConfig.T7.Noise; // If goggles should have noise
                 t7._props.IsMotionBlurred = this.modConfig.T7.MotionBlur; // If goggles should have motion blur
                 t7._props.MaskSize = 1.5; // Mask Size
-                t7._props.HeatMin = this.modConfig.T7.spectrum? 0.4: 0; // Spectrum Adjustment
-                t7._props.ColdMax = this.modConfig.T7.spectrum? 0.25: 1; // Spectrum Adjustment
+                t7._props.HeatMin = this.modConfig.T7.spectrum? 0.4: 0; // Spectrum Adjustment (TODO: add seperate spectrums for modes)
+                t7._props.ColdMax = this.modConfig.T7.spectrum? 0.25: 1; // Spectrum Adjustment (TODO: add seperate spectrums for modes)
                 t7._props.MainTexColorCoef = this.modConfig.T7.spectrum? 1.5: 1; // Spectrum Adjustment Multiplier
                 t7._props.RampShift = 0.05; // Spectrum Adjustment Shift Values
                 t7._props.IsFpsStuck = this.modConfig.T7.FPSLimit; // If googles have a fixed refresh rate
