@@ -60,12 +60,22 @@ class Mod implements IPreAkiLoadMod, IPostDBLoadMod
 
             if (this.modConfig.N15.Enabled)
             {
-                const n15 = items["5c066e3a0db834001b7353f0"]; // The PNV-10T Night Vision Goggles
+                const n15 = items["5c066e3a0db834001b7353f0"]; // The N-15 Night Vision Goggles
                 n15._props.Mask = "Anvis"; // To remove cone-vision-mask ( entire screen is visible thermal )
                 n15._props.MaskSize = 1.5; // Mask Size
                 n15._props.IsNoisy = this.modConfig.N15.Noise; // If goggles should have noise
                 n15._props.NoiseIntensity = this.modConfig.N15.Noise? 0.04 : 0; // If goggles should have noise only then enable it
                 n15._props.Color = this.modConfig.N15.Color; // Color Filter of PVS-14 Goggles
+            }
+
+            if (this.modConfig.GPNVG18.Enabled)
+            {
+                const gpnvg18 = items["5c0558060db834001b735271"]; // The GPNVG-18 Night Vision Goggles
+                gpnvg18._props.Mask = "Anvis"; // To remove cone-vision-mask ( entire screen is visible thermal )
+                gpnvg18._props.MaskSize = 1.5; // Mask Size
+                gpnvg18._props.IsNoisy = this.modConfig.GPNVG18.Noise; // If goggles should have noise
+                gpnvg18._props.NoiseIntensity = this.modConfig.GPNVG18.Noise? 0.02 : 0; // If goggles should have noise only then enable it
+                gpnvg18._props.Color = this.modConfig.GPNVG18.Color; // Color Filter of PVS-14 Goggles
             }
         }
     }

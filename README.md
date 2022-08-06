@@ -1,4 +1,4 @@
-# Config - v1.3.0 for SPT 3.1.1
+# Config - v1.4.0 for SPT 3.1.1
 
 - Enabled -- Wether the enitre mod is enabled. Takes [true] or [false]
 - T7
@@ -13,13 +13,17 @@
 - - Noise -- Wether to apply noise. Takes [true] or [false]
 - - Color -- Color Filter: Takes r,g,b,a in 0<=n<=255. Default: 183, 255, 86, 254
 - PNV-10T
-- - Enabled -- Wether changes to the AN/PVS-14 Night Vision Monocular should be made. Takes [true] or [false]
+- - Enabled -- Wether changes to the PNV-10T should be made. Takes [true] or [false]
 - - Noise -- Wether to apply noise. Takes [true] or [false]
 - - Color -- Color Filter: Takes r,g,b,a in 0<=n<=255. Default: 0, 255, 32, 254
 - N-15
-- - Enabled -- Wether changes to the AN/PVS-14 Night Vision Monocular should be made. Takes [true] or [false]
+- - Enabled -- Wether changes to the N-15 should be made. Takes [true] or [false]
 - - Noise -- Wether to apply noise. Takes [true] or [false]
 - - Color -- Color Filter: Takes r,g,b,a in 0<=n<=255. Default: 0, 255, 243, 254
+- GPNVG-18
+- - Enabled -- Wether changes to the GPNVG-18 should be made. Takes [true] or [false]
+- - Noise -- Wether to apply noise. Takes [true] or [false]
+- - Color -- Color Filter: Takes r,g,b,a in 0<=n<=255. Default: 83, 255, 69, 254
 
 ## Notes
 
