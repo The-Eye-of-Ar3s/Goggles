@@ -1,4 +1,4 @@
-# Config - v1.4.1 for SPT 3.1.1
+# Config - v2.0.0 for SPT 3.1.1
 
 - Enabled -- Wether the enitre mod is enabled. Takes [true] or [false]
 - T7
@@ -30,7 +30,7 @@
 Hue and whitehot mode for the T7 looks horrible. This is for 2 Reasons:
 
 1. Most People are used to a different heat display ( which gets used because its better )
-2. I have not adjusted spectrum values for hue and whitehot mode seperately. (This is the bigger problem)
+2. I have not adjusted spectrum values for whitehot mode seperately.
 
 
 ## Credit

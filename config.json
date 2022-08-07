@@ -47,5 +47,55 @@
             "b": 69,
             "a": 254
         }
+    },
+    "modes": {
+        "heat": {
+            "full": {
+                "HeatMin": 0,
+                "ColdMax": 1,
+                "ColorCoef": 1
+            },
+            "limited": {
+                "HeatMin": 0.4,
+                "ColdMax": 0.25,
+                "ColorCoef": 1.5
+            }
+        },
+        "hue": {
+            "full": {
+                "HeatMin": 0,
+                "ColdMax": 1,
+                "ColorCoef": 1
+            },
+            "limited": {
+                "HeatMin": 0.4,
+                "ColdMax": 0.25,
+                "ColorCoef": 1.5
+            }
+        },
+        "default": {
+            "full": {
+                "HeatMin": 0,
+                "ColdMax": 1,
+                "ColorCoef": 1
+            },
+            "limited": {
+                "HeatMin": 0.4,
+                "ColdMax": 0.25,
+                "ColorCoef": 1.5
+            }
+        },
+        "whitehot": {
+            "full": {
+                "HeatMin": 0,
+                "ColdMax": 1,
+                "ColorCoef": 1
+            },
+            "limited": {
+                "HeatMin": 0.4,
+                "ColdMax": 0.25,
+                "ColorCoef": 1.5
+            }
+        }
     }
 }

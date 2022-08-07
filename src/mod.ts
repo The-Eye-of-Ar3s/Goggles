@@ -20,19 +20,22 @@ class Mod implements IPreAkiLoadMod, IPostDBLoadMod
         {
             const databaseServer = container.resolve<DatabaseServer>("DatabaseServer"); // Item Database Server
             const items = databaseServer.getTables().templates.items; // Database Server
+            const logger = container.resolve<ILogger>("WinstonLogger");
     
             if (this.modConfig.T7.Enabled)
             {
                 const t7 = items["5c110624d174af029e69734c"]; // The T-7 Thermal Goggles
-        
+                const heatMin = this.modConfig.modes[this.modConfig.T7.Mode][this.modConfig.T7.Spectrum? "limited": "full"].HeatMin;
+                const coldMax = this.modConfig.modes[this.modConfig.T7.Mode][this.modConfig.T7.Spectrum? "limited": "full"].ColdMax;
+                logger.info(coldMax);
                 // Property adjustment
                 t7._props.Mask = "Anvis"; // To remove cone-vision-mask ( entire screen is visible thermal )
                 t7._props.RampPalette = {"heat": "0", "hue": "1", "default": "BlackHot", "whitehot": "WhiteHot"}[this.modConfig.T7.Mode]; // Which colormap to use (TODO: add seperate spectrums)
                 t7._props.IsNoisy = this.modConfig.T7.Noise; // If goggles should have noise
                 t7._props.IsMotionBlurred = this.modConfig.T7.MotionBlur; // If goggles should have motion blur
                 t7._props.MaskSize = 1.5; // Mask Size
-                t7._props.HeatMin = this.modConfig.T7.spectrum? 0.4: 0; // Spectrum Adjustment (TODO: add seperate spectrums for modes)
-                t7._props.ColdMax = this.modConfig.T7.spectrum? 0.25: 1; // Spectrum Adjustment (TODO: add seperate spectrums for modes)
+                t7._props.HeatMin = heatMin; // Spectrum Adjustment (TODO: add seperate spectrums for modes)
+                t7._props.ColdMax = coldMax; // Spectrum Adjustment (TODO: add seperate spectrums for modes)
                 t7._props.MainTexColorCoef = this.modConfig.T7.spectrum? 1.5: 1; // Spectrum Adjustment Multiplier
                 t7._props.RampShift = 0.05; // Spectrum Adjustment Shift Values
                 t7._props.IsFpsStuck = this.modConfig.T7.FPSLimit; // If googles have a fixed refresh rate
