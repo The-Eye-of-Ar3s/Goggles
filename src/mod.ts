@@ -1,18 +1,11 @@
 import { DependencyContainer } from "tsyringe";
-import { IPreAkiLoadMod } from "@spt-aki/models/external/IPreAkiLoadMod";
 import { IPostDBLoadMod } from "@spt-aki/models/external/IPostDBLoadMod";
 import { ILogger } from "@spt-aki/models/spt/utils/ILogger";
 import { DatabaseServer } from "@spt-aki/servers/DatabaseServer";
 
-class Mod implements IPreAkiLoadMod, IPostDBLoadMod
+class Mod implements IPostDBLoadMod
 {
     private modConfig = require("../config.json");
-    preAkiLoad(container: DependencyContainer): void 
-    {
-        const logger = container.resolve<ILogger>("WinstonLogger");
-        
-        logger.info("Goggles++ Loaded");
-    }
 
     postDBLoad(container: DependencyContainer)
     {
