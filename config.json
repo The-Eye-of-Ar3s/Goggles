@@ -11,6 +11,7 @@
     "PVS14": {
         "Enabled": true,
         "Noise": false,
+        "Intensity": 1,
         "Color": {
             "r": 183,
             "g": 255,
@@ -21,6 +22,7 @@
     "PNV10T": {
         "Enabled": true,
         "Noise": false,
+        "Intensity": 1,
         "Color": {
             "r": 0,
             "g": 255,
@@ -31,6 +33,7 @@
     "N15": {
         "Enabled": true,
         "Noise": false,
+        "Intensity": 1,
         "Color": {
             "r": 0,
             "g": 255,
@@ -41,6 +44,7 @@
     "GPNVG18": {
         "Enabled": true,
         "Noise": false,
+        "Intensity": 1,
         "Color": {
             "r": 83,
             "g": 255,

@@ -1,4 +1,4 @@
-# Config - v2.0.0 for SPT 3.1.1
+# Config - v2.0.1 for SPT 3.1.1
 
 - Enabled -- Wether the enitre mod is enabled. Takes [true] or [false]
 - T7
