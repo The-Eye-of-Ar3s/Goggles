@@ -53,6 +53,11 @@ class Mod implements IPostDBLoadMod
                 pnv10t._props.IsNoisy = this.modConfig.PNV10T.Noise; // If goggles should have noise
                 pnv10t._props.NoiseIntensity = this.modConfig.PNV10T.Noise? 0.05 : 0; // If goggles should have noise only then enable it
                 pnv10t._props.Color = this.modConfig.PNV10T.Color; // Color Filter of PVS-14 Goggles
+                if (this.modConfig.PNV10T.MountFix)
+                {
+                    const mount = items["5a16b93dfcdbcbcae6687261"];
+                    mount._props.Slots[0]._props.filters[0].Filter.push("5c0696830db834001d23f5da");
+                }
             }
 
             if (this.modConfig.N15.Enabled)

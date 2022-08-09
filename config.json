@@ -28,7 +28,8 @@
             "g": 255,
             "b": 32,
             "a": 254
-        }
+        },
+        "MountFix": true
     },
     "N15": {
         "Enabled": true,
