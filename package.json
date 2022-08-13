@@ -1,6 +1,6 @@
 {
     "name": "Goggles",
-    "version": "2.0.2",
+    "version": "2.0.3",
     "main": "src/mod.js",
     "license": "Attribution-ShareAlike 4.0 International",
     "author": "TheEyeOfAres",

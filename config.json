@@ -28,8 +28,7 @@
             "g": 255,
             "b": 32,
             "a": 254
-        },
-        "MountFix": true
+        }
     },
     "N15": {
         "Enabled": true,
@@ -40,7 +39,8 @@
             "g": 255,
             "b": 243,
             "a": 254
-        }
+        },
+        "MountFix": true
     },
     "GPNVG18": {
         "Enabled": true,
