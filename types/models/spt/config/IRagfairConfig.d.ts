@@ -1,3 +1,4 @@
+import { MinMax } from "../../common/MinMax";
 import { IBaseConfig } from "./IBaseConfig";
 export interface IRagfairConfig extends IBaseConfig {
     kind: "aki-ragfair";
@@ -26,7 +27,13 @@ export interface Reputation {
     gain: number;
     loss: number;
 }
+export declare class OfferAdjustment {
+    maxPriceDifferenceBelowHandbookPercent: number;
+    handbookPriceMultipier: number;
+    priceThreshholdRub: number;
+}
 export interface Dynamic {
+    offerAdjustment: OfferAdjustment;
     expiredOfferThreshold: number;
     offerItemCount: MinMax;
     price: MinMax;
@@ -39,10 +46,6 @@ export interface Dynamic {
     currencies: Record<string, number>;
     showAsSingleStack: string[];
     blacklist: Blacklist;
-}
-export interface MinMax {
-    min: number;
-    max: number;
 }
 export interface Condition {
     conditionChance: number;

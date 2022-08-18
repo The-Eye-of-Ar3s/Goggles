@@ -9,6 +9,7 @@ import { DatabaseServer } from "../servers/DatabaseServer";
 import { SaveServer } from "../servers/SaveServer";
 import { FenceService } from "../services/FenceService";
 import { PlayerService } from "../services/PlayerService";
+import { TimeUtil } from "../utils/TimeUtil";
 import { HandbookHelper } from "./HandbookHelper";
 import { ItemHelper } from "./ItemHelper";
 import { PaymentHelper } from "./PaymentHelper";
@@ -23,19 +24,26 @@ export declare class TraderHelper {
     protected handbookHelper: HandbookHelper;
     protected playerService: PlayerService;
     protected fenceService: FenceService;
+    protected timeUtil: TimeUtil;
     protected configServer: ConfigServer;
     protected traderConfig: ITraderConfig;
-    constructor(logger: ILogger, databaseServer: DatabaseServer, saveServer: SaveServer, profileHelper: ProfileHelper, paymentHelper: PaymentHelper, itemHelper: ItemHelper, handbookHelper: HandbookHelper, playerService: PlayerService, fenceService: FenceService, configServer: ConfigServer);
+    constructor(logger: ILogger, databaseServer: DatabaseServer, saveServer: SaveServer, profileHelper: ProfileHelper, paymentHelper: PaymentHelper, itemHelper: ItemHelper, handbookHelper: HandbookHelper, playerService: PlayerService, fenceService: FenceService, timeUtil: TimeUtil, configServer: ConfigServer);
     getTrader(traderID: string, sessionID: string): ITraderBase;
     getTraderAssortsById(traderId: string): ITraderAssort;
     /**
-     * Reset a trader back to its initial state as seen by a level 1 player
+     * Reset a profiles trader data back to its initial state as seen by a level 1 player
      * Does NOT take into account different profile levels
      * @param sessionID session id
      * @param traderID trader id to reset
      */
     resetTrader(sessionID: string, traderID: string): void;
-    changeTraderDisplay(traderID: string, status: boolean, sessionID: string): void;
+    /**
+     * Alter a traders unlocked status
+     * @param traderID Trader to alter
+     * @param status New status to use
+     * @param sessionID Session id
+     */
+    setTraderUnlockedState(traderID: string, status: boolean, sessionID: string): void;
     /**
      * Get a list of items and their prices from player inventory that can be sold to a trader
      * @param traderID trader id being traded with
@@ -79,11 +87,29 @@ export declare class TraderHelper {
     protected getRawItemPrice(pmcData: IPmcData, item: Item): number;
     protected getTraderDiscount(trader: ITraderBase, buyPriceCoefficient: number, fenceInfo: FenceLevel, traderID: string): number;
     /**
-     * Calculate traders level based on exp amount and increment level if over threshold
+     * Add standing to a trader and level them up if exp goes over level threshold
+     * @param sessionID Session id
+     * @param traderId traders id
+     * @param standingToAdd Standing value to add to trader
+     */
+    addStandingToTrader(sessionID: string, traderId: string, standingToAdd: number): void;
+    /**
+     * Calculate traders level based on exp amount and increments level if over threshold
      * @param traderID trader to process
      * @param sessionID session id
      */
     lvlUp(traderID: string, sessionID: string): void;
+    /**
+     * Get the next update timestamp for a trader
+     * @param traderID Trader to look up update value for
+     * @returns future timestamp
+     */
+    getNextUpdateTimestamp(traderID: string): number;
+    /**
+     * Get the reset time between trader assort refreshes in seconds
+     * @param traderId Trader to look up
+     * @returns Time in seconds
+     */
     getTraderUpdateSeconds(traderId: string): number;
     /**
     * check if an item is allowed to be sold to a trader

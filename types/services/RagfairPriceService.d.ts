@@ -1,6 +1,7 @@
 import { HandbookHelper } from "../helpers/HandbookHelper";
 import { ItemHelper } from "../helpers/ItemHelper";
 import { PresetHelper } from "../helpers/PresetHelper";
+import { Preset } from "../models/eft/common/IGlobals";
 import { Item } from "../models/eft/common/tables/IItem";
 import { IBarterScheme } from "../models/eft/common/tables/ITrader";
 import { IRagfairConfig } from "../models/spt/config/IRagfairConfig";
@@ -26,6 +27,21 @@ export declare class RagfairPriceService {
     getDynamicPrice(itemTpl: string): number;
     getAllFleaPrices(): Record<string, number>;
     getFleaPriceForItem(tplId: string): number;
+    /**
+     * Check to see if an items price is below its handbook price and adjust accoring to values set to config/ragfair.json
+     * @param itemPrice price of item
+     * @param itemTpl item template Id being checked
+     * @returns adjusted price value in roubles
+     */
+    protected adjustPriceIfBelowHandbook(itemPrice: number, itemTpl: string): number;
+    /**
+     * Get the percentage difference between two values
+     * @param a numerical value a
+     * @param b numerical value b
+     * @returns different in percent
+     */
+    protected getPriceDifference(a: number, b: number): number;
+    getStaticPriceForItem(tplId: string): number;
     getBarterPrice(barterScheme: IBarterScheme[]): number;
     getDynamicOfferPrice(items: Item[], desiredCurrency: string): number;
     /**
@@ -43,4 +59,11 @@ export declare class RagfairPriceService {
      * @returns
      */
     getWeaponPresetPrice(item: Item, items: Item[], existingPrice: number): number;
+    /**
+     * Attempt to get the default preset for a weapon, failing that get the first preset in the array
+     * (assumes default = has encyclopedia entry)
+     * @param presets weapon presets to choose from
+     * @returns Default preset object
+     */
+    protected getDefaultWeaponPreset(presets: Preset[], weapon: Item): Preset;
 }
